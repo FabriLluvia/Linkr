@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Log In to Lyrkr!</title>
+    <script type="module" src="register.js" defer></script>
+    <title>Sign Up to Lyrkr!</title>
 </head>
 <body>
     <div class="background">
@@ -13,7 +14,7 @@
     </div>
     
     <form action="#">
-        <h3>Log In!</h3>
+        <h3>Sign Up!</h3>
 
         <label for="username"> Username
             <input type="email" placeholder="Email or Phone">
@@ -23,8 +24,12 @@
             <input type="password" placeholder="Password">
         </label>
 
+        <label for="password"> Confirm Password
+            <input type="password" placeholder="Confirm Password">
+        </label>
 
-        <button type="submit">Log In!</button>
+
+        <button type="submit">Sign Up!</button>
 
 
         <div class="social">
@@ -37,7 +42,7 @@
         </div>        
 
         <div class="form">
-            <p>Don't have an account? <a href="#">Create One!</a></p>
+            <p>Already have an account? <a href="login.html">Log In!</a></p>
         </div>
 
     </form>

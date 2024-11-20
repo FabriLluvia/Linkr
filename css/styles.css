@@ -134,3 +134,90 @@ button{
     display: flex;
     gap: 20px;
 }
+
+.video {
+    margin: auto;
+    width: 45%;
+    border: 3px solid #3b28cc;
+    padding: 10px;
+    width: 45%;
+  }
+
+.menu-bar {
+    display: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    width: 15%;
+}
+
+.logo, .home, .feed, .premium, .profile, .settings, .log-out{
+    margin-top: 30px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #080710;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.big-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;/
+}
+
+.arrow-up, .arrow-down{
+    margin-top: 30px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #080710;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.notifications, .my-likes, .my-favs, .following{
+    margin-top: 30px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #080710;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.space{
+    margin: 5%;
+}
+
+.follow, .like, .comment, .favorite, .share, .download{
+    margin: 2%;
+}
+
+
+.icon {
+    font-size: 30px; /* Tamaño del icono */
+    color: #ff0000; /* Color del icono */
+    transition: transform 0.3s; /* Efecto de transición */
+  }
+  
+  .icon:hover {
+    transform: scale(1.2); /* Efecto al pasar el mouse */
+  }
+  
