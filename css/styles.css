@@ -212,3 +212,9 @@ button{
     display: flex;
     flex-direction: column;   
 }
+
+.logo img {
+    height: 40px;
+    width: auto;
+    vertical-align: middle;
+}
