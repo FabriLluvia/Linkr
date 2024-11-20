@@ -195,7 +195,7 @@ button{
 }
 
 .follow, .like, .comment, .favorite, .share, .download, .arrow-up, .arrow-down{
-    margin: 2%;
+    margin: -1%;
 }
 
 .video-container{
