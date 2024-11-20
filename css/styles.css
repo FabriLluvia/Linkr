@@ -194,8 +194,12 @@ button{
     margin-right: 5%;
 }
 
-.follow, .like, .comment, .favorite, .share, .download, .arrow-up, .arrow-down{
+.follow, .like, .comment, .favorite, .share, .download{
     margin: -1%;
+}
+
+.arrow-up, .arrow-down{
+    margin: 2%;
 }
 
 .video-container{
