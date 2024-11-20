@@ -168,7 +168,7 @@ button{
 .big-container{
     display: flex;
     justify-content: space-between;
-    align-items: center;/
+    align-items: center;
 }
 
 .notifications, .my-likes, .my-favs, .following{
@@ -198,13 +198,13 @@ button{
     margin: 2%;
 }
 
-.icon {
-    font-size: 30px; /* Tamaño del icono */
-    color: #ff0000; /* Color del icono */
-    transition: transform 0.3s; /* Efecto de transición */
-  }
-  
-  .icon:hover {
-    transform: scale(1.2); /* Efecto al pasar el mouse */
-  }
-  
+.video-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.video-buttons{
+    display: flex;
+    flex-direction: column;   
+}
