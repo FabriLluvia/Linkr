@@ -1,15 +1,20 @@
-*::after,*::before{
+@font-face {
+    font-family: "OpenSans-Regular";
+    src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
+}
+
+*::after, *::before {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
-    background-image: url(images\background-solid.png);
+body {
+    background-image: url(images/background-solid.png);
     background-color: #ADD7F6;
     background-size: cover;
+    font-family: "OpenSans-Regular", sans-serif;
 }
-
 .background{
     width: 430px;
     height: 520px;
@@ -150,7 +155,7 @@ button{
     width: 15%;
 }
 
-.logo, .home, .feed, .premium, .profile, .settings, .log-out{
+.home, .feed, .premium, .profile, .settings, .log-out{
     margin-top: 30px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.3);
@@ -214,7 +219,18 @@ button{
 }
 
 .logo img {
-    height: 40px;
+    height: 70px;
     width: auto;
     vertical-align: middle;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #080710;
+    border-radius: 5px;
 }
