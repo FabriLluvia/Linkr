@@ -1,6 +1,6 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-import { getAuth, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
 
 
@@ -25,8 +25,8 @@ const provider = new GoogleAuthProvider();
 
 const googleLogin = document.getElementById("google-login-btn");
 
-googleLogin.addEventListener("click", function(){
-    
+googleLogin.addEventListener("click", function () {
+
     const auth = getAuth();
     signInWithPopup(auth, provider)
         .then((result) => {
@@ -51,3 +51,16 @@ googleLogin.addEventListener("click", function(){
             // ...
         });
 })
+
+function updateUserProfile(user) {
+    const userName = user.displayName;
+    const userEmail = user.email;
+    const userProfilePicture = user.photoURL;
+
+    // Update the profile section with user data
+    document.getElementById("userName").textContent = userName;
+    document.getElementById("userEmail").textContent = userEmail;
+    document.getElementById("userProfilePicture").src = userProfilePicture;
+}
+
+updateUserProfile();
