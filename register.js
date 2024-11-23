@@ -11,7 +11,6 @@ const firebaseConfig = {
     appId: "1:53121289627:web:e9b9d46f18209bb628653e",
     measurementId: "G-E0EZ03GSL7"
 };
-console.log('API Key:', process.env.NEXT_PUBLIC_AUTH_GOOGLE_FIREBASE_LOGIN_API_KEY);
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
