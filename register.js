@@ -3,7 +3,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstati
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
 
 const firebaseConfig = {
-    apiKey: "AUTH_GOOGLE_FIREBASE_LOGIN_API_KEY",
+    apiKey: process.env.AUTH_GOOGLE_FIREBASE_LOGIN_API_KEY,
     authDomain: "fmu-login-services.firebaseapp.com",
     projectId: "fmu-login-services",
     storageBucket: "fmu-login-services.firebasestorage.app",
@@ -54,14 +54,17 @@ googleLogin.addEventListener("click", function () {
 
 
 function updateUserProfile(user) {
-    const userName = user.displayName;
-    const userEmail = user.email;
-    const userProfilePicture = user.photoURL;
+    if (user) {
+        const userName = user.displayName || "Not available name";
+        const userEmail = user.email || "Not available Email";
+        const userProfilePicture = user.photoURL || "Not available photo";
 
-    // Update the profile section with user data
-    document.getElementById("userName").textContent = userName;
-    document.getElementById("userEmail").textContent = userEmail;
-    document.getElementById("userProfilePicture").src = userProfilePicture;
+        document.getElementById("userName").textContent = userName;
+        document.getElementById("userEmail").textContent = userEmail;
+        document.getElementById("userProfilePicture").src = userProfilePicture;
+    } else {
+        console.log("Not authenticated user.");
+    }
 }
 
 updateUserProfile();
