@@ -51,3 +51,16 @@ googleLogin.addEventListener("click", function () {
             // ...
         });
 })
+
+function updateUserProfile(user) {
+    const userName = user.displayName;
+    const userEmail = user.email;
+    const userProfilePicture = user.photoURL;
+
+    // Update the profile section with user data
+    document.getElementById("userName").textContent = userName;
+    document.getElementById("userEmail").textContent = userEmail;
+    document.getElementById("userProfilePicture").src = userProfilePicture;
+}
+
+updateUserProfile();

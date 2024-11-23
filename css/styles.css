@@ -3,62 +3,64 @@
     src: url("/fonts/OpenSans-Regular.ttf") format("truetype");
 }
 
-*::after, *::before {
+*::after,
+*::before {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-image: url(/images/background-solid.png);
+    background-image: url("/images/background-solid.png");
     background-color: #ADD7F6;
     background-size: cover;
     font-family: "OpenSans-Regular", sans-serif;
 }
-.background{
+
+.background {
     width: 430px;
     height: 520px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
 }
 
-.background .shape{
+.background .shape {
     height: 200px;
     width: 200px;
     position: absolute;
     border-radius: 50%;
 }
 
-.shape:first-child{
-    background:linear-gradient(#1845ad, #23a2f6);
+.shape:first-child {
+    background: linear-gradient(#1845ad, #23a2f6);
     left: -80px;
     top: -80px;
 }
 
-.shape:last-child{
+.shape:last-child {
     background: linear-gradient(#ff512f, #f09819);
     right: -30px;
     bottom: -80px;
 }
 
-form{
+form {
     height: 520px;
     width: 400px;
-    background-color: rgba(255,255,255,0.13);
+    background-color: rgba(255, 255, 255, 0.13);
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     border-radius: 10px;
     top: 50%;
     left: 50%;
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
     padding: 50px 35px;
-    box-shadow: 0 0 40px rgba(8,8,16,0.6)
+    box-shadow: 0 0 40px rgba(8, 8, 16, 0.6)
 }
 
-form *{
+form * {
     color: white;
     font-family: "OpenSans-Regular", sans-serif;
     letter-spacing: 0.5px;
@@ -66,14 +68,14 @@ form *{
     border: none;
 }
 
-form h3{
+form h3 {
     font-size: 32px;
     font-weight: 500;
     line-height: 42px;
     text-align: center;
 }
 
-form label{
+form label {
     display: block;
     margin-top: 30px;
     font-size: 18px;
@@ -84,7 +86,7 @@ input {
     display: block;
     height: 50px;
     width: 100%;
-    background-color: rgba(255,255,255,0.0713);
+    background-color: rgba(255, 255, 255, 0.0713);
     border-radius: 3px;
     padding: 0 10px;
     margin-top: 8px;
@@ -92,11 +94,11 @@ input {
     font-weight: 300;
 }
 
-::placeholder{
+::placeholder {
     color: #e5e5e5;
 }
 
-button{
+button {
     margin-top: 30px;
     width: 100%;
     background-color: white;
@@ -108,7 +110,8 @@ button{
     border-radius: 5px;
 }
 
-.go, .fb {
+.go,
+.fb {
     margin-top: 30px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
@@ -142,11 +145,12 @@ button{
 
 .video {
     margin: auto;
-    width: 45%;
+    display: flex;
+    align-items: center;
+    width: 100%;
     border: 3px solid #3b28cc;
     padding: 10px;
-    width: 45%;
-  }
+}
 
 .menu-bar {
     display: flex-start;
@@ -155,7 +159,12 @@ button{
     width: 15%;
 }
 
-.home, .feed, .premium, .profile, .settings, .log-out{
+.home,
+.feed,
+.premium,
+.profile,
+.settings,
+.log-out {
     margin-top: 30px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.3);
@@ -170,13 +179,16 @@ button{
     gap: 10px;
 }
 
-.big-container{
+.big-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.notifications, .my-likes, .my-favs, .following{
+.notifications,
+.my-likes,
+.my-favs,
+.following {
     margin-top: 30px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.3);
@@ -191,7 +203,7 @@ button{
     gap: 10px;
 }
 
-.space{
+.space {
     margin: 5%;
     margin-top: 5%;
     margin-bottom: 5%;
@@ -199,23 +211,29 @@ button{
     margin-right: 5%;
 }
 
-.follow, .like, .comment, .favorite, .share, .download{
+.follow,
+.like,
+.comment,
+.favorite,
+.share,
+.download {
     margin: -1%;
 }
 
-.arrow-up, .arrow-down{
+.arrow-up,
+.arrow-down {
     margin: 2%;
 }
 
-.video-container{
+.video-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.video-buttons{
+.video-buttons {
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
 }
 
 .logo img {
@@ -224,7 +242,7 @@ button{
     vertical-align: middle;
 }
 
-.logo{
+.logo {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -250,4 +268,29 @@ a:hover {
 
 a:active {
     color: black;
+}
+
+h2 {
+    color: black;
+}
+
+h3 {
+    color: black;
+}
+
+.vertical-organizer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.plus-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3b28cc;
+    color: #ADD7F6;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
 }
