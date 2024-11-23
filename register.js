@@ -1,11 +1,9 @@
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
 
-
 const firebaseConfig = {
-    apiKey: "",
+    apiKey: "",  // Aquí no debes poner la API Key de Firebase, se usará en el backend
     authDomain: "fmu-login-services.firebaseapp.com",
     projectId: "fmu-login-services",
     storageBucket: "fmu-login-services.firebasestorage.app",
@@ -17,7 +15,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-s
 
 const auth = getAuth();
 auth.languageCode = 'en';
@@ -33,25 +30,24 @@ googleLogin.addEventListener("click", function () {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
 
-            // Send the token to the backend in Vercel
-            fetch("https://<your-project>.vercel.app/api/auth", {
+            // Send the token to the backend for verification
+            fetch("https://your-vercel-url.com/api/auth", {  // Reemplaza con tu URL de Vercel
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ token: token }),  // Send the token to the backend
+                body: JSON.stringify({ token: token }),  // Enviar el token al backend
             })
             .then(response => response.json())
             .then(data => {
                 console.log("Authenticated user:", data.user);
-                window.location.href = '../LoggedIn.html'; // Redirect if everything is fine
+                window.location.href = '../LoggedIn.html';  // Redirigir si la autenticación es exitosa
             })
             .catch((error) => {
                 console.error("Error authenticating with the backend:", error);
             });
 
         }).catch((error) => {
-            // Handle errors here
             console.error("Error signing in:", error.message);
         });
 });
