@@ -1,6 +1,8 @@
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyAp83Tb4S9Cnrmhf1O3v99ZRWQtz6Zlkho",
@@ -16,6 +18,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
+
 const auth = getAuth();
 auth.languageCode = 'en';
 const provider = new GoogleAuthProvider();
@@ -23,48 +26,41 @@ const provider = new GoogleAuthProvider();
 const googleLogin = document.getElementById("google-login-btn");
 
 googleLogin.addEventListener("click", function () {
+
     const auth = getAuth();
     signInWithPopup(auth, provider)
         .then((result) => {
-            // Get the Google token
+            // This gives you a Google Access Token. You can use it to access the Google API.
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
+            // The signed-in user info.
+            const user = result.user;
 
-            // Send the token to the backend for verification
-            fetch("https://lyrkr.vercel.app/LoggedIn.html", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ token: token }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Authenticated user:", data.user);
-                window.location.href = '../LoggedIn.html';  // Redirect if succesful
-            })
-            .catch((error) => {
-                console.error("Error authenticating with the backend:", error);
-            });
-
+            console.log(user);
+            window.location.href = '../LoggedIn.html';
+            // IdP data available using getAdditionalUserInfo(result)
+            // ...
         }).catch((error) => {
-            console.error("Error signing in:", error.message);
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            const email = error.customData.email;
+            // The AuthCredential type that was used.
+            const credential = GoogleAuthProvider.credentialFromError(error);
+            // ...
         });
-});
-
+})
 
 function updateUserProfile(user) {
-    if (user) {
-        const userName = user.displayName || "Not available name";
-        const userEmail = user.email || "Not available Email";
-        const userProfilePicture = user.photoURL || "Not available photo";
+    const userName = user.displayName;
+    const userEmail = user.email;
+    const userProfilePicture = user.photoURL;
 
-        document.getElementById("userName").textContent = userName;
-        document.getElementById("userEmail").textContent = userEmail;
-        document.getElementById("userProfilePicture").src = userProfilePicture;
-    } else {
-        console.log("Not authenticated user.");
-    }
+    // Update the profile section with user data
+    document.getElementById("userName").textContent = userName;
+    document.getElementById("userEmail").textContent = userEmail;
+    document.getElementById("userProfilePicture").src = userProfilePicture;
 }
 
 updateUserProfile();
