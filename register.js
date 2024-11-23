@@ -17,7 +17,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-
+s
 
 const auth = getAuth();
 auth.languageCode = 'en';
@@ -26,31 +26,36 @@ const provider = new GoogleAuthProvider();
 const googleLogin = document.getElementById("google-login-btn");
 
 googleLogin.addEventListener("click", function () {
-
     const auth = getAuth();
     signInWithPopup(auth, provider)
         .then((result) => {
-            // This gives you a Google Access Token. You can use it to access the Google API.
+            // Get the Google token
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
-            // The signed-in user info.
-            const user = result.user;
 
-            console.log(user);
-            window.location.href = '../LoggedIn.html';
-            // IdP data available using getAdditionalUserInfo(result)
-            // ...
+            // Send the token to the backend in Vercel
+            fetch("https://<your-project>.vercel.app/api/auth", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ token: token }),  // Send the token to the backend
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Authenticated user:", data.user);
+                window.location.href = '../LoggedIn.html'; // Redirect if everything is fine
+            })
+            .catch((error) => {
+                console.error("Error authenticating with the backend:", error);
+            });
+
         }).catch((error) => {
-            // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // The email of the user's account used.
-            const email = error.customData.email;
-            // The AuthCredential type that was used.
-            const credential = GoogleAuthProvider.credentialFromError(error);
-            // ...
+            // Handle errors here
+            console.error("Error signing in:", error.message);
         });
-})
+});
+
 
 function updateUserProfile(user) {
     const userName = user.displayName;
