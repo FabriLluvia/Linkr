@@ -5,7 +5,7 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAp83Tb4S9Cnrmhf1O3v99ZRWQtz6Zlkho",
+    apiKey: "",
     authDomain: "fmu-login-services.firebaseapp.com",
     projectId: "fmu-login-services",
     storageBucket: "fmu-login-services.firebasestorage.app",

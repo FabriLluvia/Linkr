@@ -1,0 +1,3 @@
+const CONFIG = {
+    AUTH_GOOGLE_FIREBASE_LOGIN_API_KEY: '',
+  };
