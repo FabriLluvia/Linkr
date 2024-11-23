@@ -31,17 +31,17 @@ googleLogin.addEventListener("click", function () {
             const token = credential.accessToken;
 
             // Send the token to the backend for verification
-            fetch("https://your-vercel-url.com/api/auth", {  // Reemplaza con tu URL de Vercel
+            fetch("https://lyrkr.vercel.app/LoggedIn.html", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ token: token }),  // Enviar el token al backend
+                body: JSON.stringify({ token: token }),
             })
             .then(response => response.json())
             .then(data => {
                 console.log("Authenticated user:", data.user);
-                window.location.href = '../LoggedIn.html';  // Redirigir si la autenticación es exitosa
+                window.location.href = '../LoggedIn.html';  // Redirect if succesful
             })
             .catch((error) => {
                 console.error("Error authenticating with the backend:", error);
