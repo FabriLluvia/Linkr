@@ -10,7 +10,7 @@
 }
 
 body {
-    background-image: url(images/background-solid.png);
+    background-image: url(/images/background-solid.png);
     background-color: #ADD7F6;
     background-size: cover;
     font-family: "OpenSans-Regular", sans-serif;
