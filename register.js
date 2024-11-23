@@ -3,7 +3,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstati
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
 
 const firebaseConfig = {
-    apiKey: process.env.NEXT_PUBLIC_AUTH_GOOGLE_FIREBASE_LOGIN_API_KEY,
+    apiKey: "AIzaSyAp83Tb4S9Cnrmhf1O3v99ZRWQtz6Zlkho",
     authDomain: "fmu-login-services.firebaseapp.com",
     projectId: "fmu-login-services",
     storageBucket: "fmu-login-services.firebasestorage.app",
