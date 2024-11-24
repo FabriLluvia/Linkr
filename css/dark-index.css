@@ -1,0 +1,185 @@
+@font-face {
+    font-family: "OpenSans-Regular";
+    src: url("/fonts/OpenSans-Regular.ttf") format("truetype");
+}
+
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ADD7F6;
+    background-size: cover;
+    font-family: "OpenSans-Regular", sans-serif;
+}
+
+.background {
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.background .shape {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.video {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 3px solid #3b28cc;
+    padding: 10px;
+}
+
+.menu-bar {
+    display: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    width: 15%;
+}
+
+.home,
+.feed,
+.premium,
+.profile,
+.settings,
+.log-out {
+    margin-top: 30px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #080710;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.big-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notifications,
+.my-likes,
+.my-favs,
+.following {
+    margin-top: 30px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #080710;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.space {
+    margin: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.follow,
+.like,
+.comment,
+.favorite,
+.share,
+.download {
+    margin: -1%;
+}
+
+.arrow-up,
+.arrow-down {
+    margin: 2%;
+}
+
+.video-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.video-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo img {
+    height: 70px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #080710;
+    border-radius: 5px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
+a:active {
+    color: black;
+}
+
+h2 {
+    color: black;
+}
+
+h3 {
+    color: black;
+}
+
+.vertical-organizer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.plus-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3b28cc;
+    color: #ADD7F6;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
