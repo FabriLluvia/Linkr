@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "standard --fix",
+    "lint": "standard --fix && standard --plugin html index.html LoggedIn.html login.html pricing.html signup.html",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -26,5 +26,8 @@
   },
   "engines": {
     "node": "22.x"
+  },
+  "dependencies": {
+    "eslint-plugin-html": "^8.1.2"
   }
 }

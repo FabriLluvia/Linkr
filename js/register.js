@@ -12,6 +12,8 @@ const firebaseConfig = {
   measurementId: 'G-E0EZ03GSL7'
 }
 
+/* eslint-disable no-unused-vars */
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
 const analytics = getAnalytics(app)
@@ -47,6 +49,8 @@ googleLogin.addEventListener('click', function () {
       // ...
     })
 })
+
+/* eslint-enable no-unused-vars */
 
 function updateUserProfile (user) {
   const userName = user.displayName
