@@ -23,5 +23,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "engines": {
+    "node": "23.3.0"
   }
 }
