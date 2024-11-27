@@ -2,117 +2,117 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PayPal Payment Portal</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PayPal Payment Portal</title>
 
-    <!-- Widget for seeing the prices. Don't modify. -->
-    <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
-    <link rel="stylesheet" href="css/light-index.css">
-    <link rel="stylesheet" href="css/light-payment.css">
-    <div class="commonninja_component pid-cd7cf193-77f1-4c18-93bf-05a746ed4d94"></div>
+  <!-- Widget for seeing the prices. Don't modify. -->
+  <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
+  <link rel="stylesheet" href="css/light-index.css">
+  <link rel="stylesheet" href="css/light-payment.css">
+  <div class="commonninja_component pid-cd7cf193-77f1-4c18-93bf-05a746ed4d94"></div>
 
-    <!-- PayPal SDK -->
-    <script
-        src="https://www.paypal.com/sdk/js?client-id=ASRiHoIbJWmsasnoZAr3JBiBYlSPGYnI1sEc1VfIUU0z_TPRMysgveo2uv0tt7QvtY6V4dqqo0rEKeKQ&currency=USD"></script>
+  <!-- PayPal SDK -->
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=ASRiHoIbJWmsasnoZAr3JBiBYlSPGYnI1sEc1VfIUU0z_TPRMysgveo2uv0tt7QvtY6V4dqqo0rEKeKQ&currency=USD"></script>
 
-    <style>
-        /* Basic styles for modal */
-        #modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
+  <style>
+    /* Basic styles for modal */
+    #modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
 
-        #modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
+    #modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
 
-        #paypal-button-container {
-            margin-top: 20px;
-        }
-    </style>
+    #paypal-button-container {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- Advertising not to buy anything here-->
+  <!-- Advertising not to buy anything here-->
 
-    <h1>Remember, don't buy anything here right now, because you will not get any subscription!!</h1>
+  <h1>Remember, don't buy anything here right now, because you will not get any subscription!!</h1>
 
-    <!-- Purchase text -->
+  <!-- Purchase text -->
 
-    <h1>Purchase Your Product</h1>
-    <p>Select the product you want to buy:</p>
+  <h1>Purchase Your Product</h1>
+  <p>Select the product you want to buy:</p>
 
-    <!-- Buttons for products -->
-    <button onclick="openModal('Plus', 9.99)">Buy Plus ($9.99)</button>
-    <button onclick="openModal('Premium', 14.99)">Buy Premium ($14.99)</button>
+  <!-- Buttons for products -->
+  <button onclick="openModal('Plus', 9.99)">Buy Plus ($9.99)</button>
+  <button onclick="openModal('Premium', 14.99)">Buy Premium ($14.99)</button>
 
-    <!-- Modal -->
-    <div id="modal-overlay"></div>
-    <div id="modal">
-        <h2>Process Payment</h2>
-        <p id="product-name"></p>
-        <div id="paypal-button-container"></div>
-        <button id="close-btn" onclick="closeModal()">Close</button>
-    </div>
+  <!-- Modal -->
+  <div id="modal-overlay"></div>
+  <div id="modal">
+    <h2>Process Payment</h2>
+    <p id="product-name"></p>
+    <div id="paypal-button-container"></div>
+    <button id="close-btn" onclick="closeModal()">Close</button>
+  </div>
 
-    <!-- JavaScript -->
-    <script>
-        function openModal(productName, price) {
-            // Show modal
-            document.getElementById('modal').style.display = 'block';
-            document.getElementById('modal-overlay').style.display = 'block';
+  <!-- JavaScript -->
+  <script>
+    function openModal (productName, price) {
+      // Show modal
+      document.getElementById('modal').style.display = 'block'
+      document.getElementById('modal-overlay').style.display = 'block'
 
-            // Update product name
-            document.getElementById('product-name').innerText = `Product: ${productName} ($${price})`;
+      // Update product name
+      document.getElementById('product-name').innerText = `Product: ${productName} ($${price})`
 
-            // Render PayPal button
-            paypal.Buttons({
-                createOrder: function (data, actions) {
-                    return actions.order.create({
-                        purchase_units: [{
-                            amount: {
-                                value: price.toFixed(2) // Dynamic price
-                            }
-                        }]
-                    });
-                },
-                onApprove: function (data, actions) {
-                    return actions.order.capture().then(function (details) {
-                        alert('Payment completed by ' + details.payer.name.given_name);
-                        closeModal(); // Close modal after successful payment
-                    });
-                },
-                onError: function (err) {
-                    console.error(err);
-                    alert('There was an error processing the payment.');
-                }
-            }).render('#paypal-button-container');
+      // Render PayPal button
+      paypal.Buttons({
+        createOrder: function (data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: price.toFixed(2) // Dynamic price
+              }
+            }]
+          })
+        },
+        onApprove: function (data, actions) {
+          return actions.order.capture().then(function (details) {
+            alert('Payment completed by ' + details.payer.name.given_name)
+            closeModal() // Close modal after successful payment
+          })
+        },
+        onError: function (err) {
+          console.error(err)
+          alert('There was an error processing the payment.')
         }
+      }).render('#paypal-button-container')
+    }
 
-        function closeModal() {
-            // Hide modal
-            document.getElementById('modal').style.display = 'none';
-            document.getElementById('modal-overlay').style.display = 'none';
+    function closeModal () {
+      // Hide modal
+      document.getElementById('modal').style.display = 'none'
+      document.getElementById('modal-overlay').style.display = 'none'
 
-            // Clear PayPal button container to avoid duplicates
-            document.getElementById('paypal-button-container').innerHTML = '';
-        }
-    </script>
+      // Clear PayPal button container to avoid duplicates
+      document.getElementById('paypal-button-container').innerHTML = ''
+    }
+  </script>
 </body>
 
 </html>
