@@ -3,12 +3,11 @@
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Firebase](https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34)
 ![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
-![Stripe](https://img.shields.io/badge/Stripe-5469d4?style=for-the-badge&logo=stripe&logoColor=ffffff)
+![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)
 
 
@@ -69,7 +68,7 @@ To [FaceDev](https://github.com/face-hh) for the License
 1. **Frontend**:
 
    - **Pure HTML**.
-   - **CSS**: We use **Bootstrap** for easy responsive design and visual customization.
+   - **Pure CSS**.
    - **JavaScript**: We use **Standard.JS**.
 
 2. **Backend**:
@@ -87,7 +86,7 @@ To [FaceDev](https://github.com/face-hh) for the License
 
 5. **Payment**: 
 
-   - We will use **Stripe** for handling payments in the application.
+   - We will use **PayPal** for handling payments in the application.
 
 6. **Global variables and access to external APIs**:
    - We will use **Cloudflare Workers** to store and access variables easily and securely through a system of serverless functions.
