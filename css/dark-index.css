@@ -11,7 +11,7 @@
 }
 
 body {
-    background-color: #ADD7F6;
+    background-color: #011638;
     background-size: cover;
     font-family: "OpenSans-Regular", sans-serif;
 }
@@ -37,7 +37,7 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    border: 3px solid #3b28cc;
+    border: 3px solid #132E3F;
     padding: 10px;
 }
 
@@ -46,6 +46,22 @@ body {
     flex-direction: column;
     gap: 20px;
     width: 15%;
+}
+
+.switch-theme {
+    margin-top: 30px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #EAE8FF;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-width:  0;
 }
 
 .home,
@@ -61,7 +77,7 @@ body {
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
-    color: #080710;
+    color: #EAE8FF;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -85,7 +101,7 @@ body {
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
-    color: #080710;
+    color: #EAE8FF;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -107,17 +123,32 @@ body {
 .share,
 .download {
     margin: -1%;
+    width: 100%;
+    cursor: pointer;
+    color: #EAE8FF;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .arrow-up,
 .arrow-down {
     margin: 2%;
+    width: 100%;
+    cursor: pointer;
+    color: #EAE8FF;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .video-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #EAE8FF;
 }
 
 .video-buttons {
@@ -138,33 +169,33 @@ body {
     font-size: 50px;
     font-weight: 500;
     cursor: pointer;
-    color: #080710;
+    color: #EAE8FF;
     border-radius: 5px;
 }
 
 a {
-    color: black;
+    color: #EAE8FF;
     text-decoration: none;
 }
 
 a:visited {
-    color: black;
+    color: #EAE8FF;
 }
 
 a:hover {
-    color: black;
+    color: #EAE8FF;
 }
 
 a:active {
-    color: black;
+    color: #EAE8FF;
 }
 
 h2 {
-    color: black;
+    color: #EAE8FF;
 }
 
 h3 {
-    color: black;
+    color: #EAE8FF;
 }
 
 .vertical-organizer {
@@ -177,7 +208,7 @@ h3 {
 .plus-button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #3b28cc;
+    background-color: #132E3F;
     color: #ADD7F6;
     border-radius: 5px;
     cursor: pointer;

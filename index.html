@@ -1,140 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      id="theme"
-      rel="stylesheet"
-      type="text/css"
-      href="css/light-index.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/f8136d3ab5.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Lyrkr, short videos at your fingertips!</title>
-  </head>
 
-  <div class="big-container">
-    <div class="menu-bar">
-      <div class="logo">
-        <img src="images/Lyrkr.png" alt="Lyrkr Logo" />Lyrkr
-      </div>
-
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link id="theme" rel="stylesheet" type="text/css" href="css/light-index.css" />
+  <script src="https://kit.fontawesome.com/f8136d3ab5.js" crossorigin="anonymous"></script>
+  <title>Lyrkr, short videos at your fingertips!</title>
 </head>
 
-<button onclick="toggleTheme()">Switch</button>
-<script>
-    function toggleTheme() {
+<div class="big-container">
+  <div class="menu-bar">
+    <div class="logo">
+      <img src="images/Lyrkr.png" alt="Lyrkr Logo" />Lyrkr
+    </div>
+
+    </head>
+
+    <button onclick="toggleTheme()" class="switch-theme"><i class="fa-solid fa-sliders"></i> Switch</button>
+    <script>
+      function toggleTheme() {
         // Select the <link> element
         let theme = document.getElementById('theme');
 
         // Toggle between light.css and dark.css
         if (theme.getAttribute('href') == 'css/light-index.css') {
-            theme.setAttribute('href', 'css/dark-index.css');
+          theme.setAttribute('href', 'css/dark-index.css');
         } else {
-            theme.setAttribute('href', 'css/light-index.css');
+          theme.setAttribute('href', 'css/light-index.css');
         }
-    }
-</script>
+      }
+    </script>
 
-      <div class="home">
-        <i class="fa-solid fa-house"></i>
-        Home
-      </div>
-      <div class="feed">
-        <i class="fa-solid fa-compass"></i>
-        <i class="fa-regular fa-compass"></i>
-        Feed
-      </div>
-      <div class="premium">
-        <i class="fa-solid fa-crown"></i>
-        <a href="pricing.html">Buy Premium</a>
-      </div>
-      <div class="profile">
-        <i class="fa-solid fa-circle-user"></i>
-        <i class="fa-regular fa-circle-user"></i>
-        <a href="login.html">Profile</a>
-      </div>
-      <div class="settings">
-        <i class="fa-solid fa-gear"></i>
-        Settings
-      </div>
-      <div class="log-out">
-        <i class="fa-solid fa-door-open"></i>
-        Log Out
-      </div>
+    <div class="home">
+      <i class="fa-solid fa-house"></i>
+      Home
     </div>
+    <div class="feed">
+      <i class="fa-solid fa-compass"></i>
+      <i class="fa-regular fa-compass"></i>
+      Feed
+    </div>
+    <div class="premium">
+      <i class="fa-solid fa-crown"></i>
+      <a href="pricing.html">Buy Premium</a>
+    </div>
+    <div class="profile">
+      <i class="fa-solid fa-circle-user"></i>
+      <i class="fa-regular fa-circle-user"></i>
+      <a href="login.html">Profile</a>
+    </div>
+    <div class="settings">
+      <i class="fa-solid fa-gear"></i>
+      Settings
+    </div>
+    <div class="log-out">
+      <i class="fa-solid fa-door-open"></i>
+      Log Out
+    </div>
+  </div>
 
-    <div class="space"></div>
+  <div class="space"></div>
 
-    <div class="vertical-organizer">
-      <div class="video">
-        <div class="video-container">
-          <p>This text is centered.</p>
-          <div class="video-buttons">
-            <div class="follow">
-              <i class="fa-solid fa-user"></i>
-              <i class="fa-regular fa-user"></i>
-            </div>
-            <div class="like">
-              <i class="fa-solid fa-heart"></i>
-              <i class="fa-regular fa-heart"></i>
-            </div>
-            <div class="comment">
-              <i class="fa-solid fa-comment"></i>
-              <i class="fa-regular fa-comment"></i>
-            </div>
-            <div class="favorite">
-              <i class="fa-solid fa-bookmark"></i>
-              <i class="fa-regular fa-bookmark"></i>
-            </div>
-            <div class="share">
-              <i class="fa-solid fa-share-from-square"></i>
-              <i class="fa-regular fa-share-from-square"></i>
-            </div>
-            <div class="download">
-              <i class="fa-solid fa-circle-down"></i>
-              <i class="fa-regular fa-circle-down"></i>
-            </div>
+  <div class="vertical-organizer">
+    <div class="video">
+      <div class="video-container">
+        <p>This text is centered.</p>
+        <div class="video-buttons">
+          <div class="follow">
+            <i class="fa-solid fa-user"></i>
+            <i class="fa-regular fa-user"></i>
+          </div>
+          <div class="like">
+            <i class="fa-solid fa-heart"></i>
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="comment">
+            <i class="fa-solid fa-comment"></i>
+            <i class="fa-regular fa-comment"></i>
+          </div>
+          <div class="favorite">
+            <i class="fa-solid fa-bookmark"></i>
+            <i class="fa-regular fa-bookmark"></i>
+          </div>
+          <div class="share">
+            <i class="fa-solid fa-share-from-square"></i>
+            <i class="fa-regular fa-share-from-square"></i>
+          </div>
+          <div class="download">
+            <i class="fa-solid fa-circle-down"></i>
+            <i class="fa-regular fa-circle-down"></i>
           </div>
         </div>
       </div>
-
-      <div class="plus-button">+</div>
     </div>
 
-    <div class="menu-bar">
-      <div class="arrow-up">
-        <i class="fa-solid fa-arrow-up"></i>
-      </div>
-      <div class="space"></div>
-      <div class="arrow-down">
-        <i class="fa-solid fa-arrow-down"></i>
-      </div>
-    </div>
+    <div class="plus-button">+</div>
+  </div>
 
-    <div class="menu-bar">
-      <div class="notifications">
-        <i class="fa-solid fa-bell"></i>
-        <i class="fa-regular fa-bell"></i>
-        Notifications
-      </div>
-      <div class="my-likes">
-        <i class="fa-solid fa-heart"></i>
-        <i class="fa-regular fa-heart"></i>
-        My Likes
-      </div>
-      <div class="my-favs">
-        <i class="fa-solid fa-bookmark"></i>
-        <i class="fa-regular fa-bookmark"></i>
-        My favs
-      </div>
-      <div class="following">
-        <i class="fa-solid fa-user-plus"></i>
-        Following
-      </div>
+  <div class="menu-bar">
+    <div class="arrow-up">
+      <i class="fa-solid fa-arrow-up"></i>
+    </div>
+    <div class="space"></div>
+    <div class="arrow-down">
+      <i class="fa-solid fa-arrow-down"></i>
     </div>
   </div>
+
+  <div class="menu-bar">
+    <div class="notifications">
+      <i class="fa-solid fa-bell"></i>
+      <i class="fa-regular fa-bell"></i>
+      Notifications
+    </div>
+    <div class="my-likes">
+      <i class="fa-solid fa-heart"></i>
+      <i class="fa-regular fa-heart"></i>
+      My Likes
+    </div>
+    <div class="my-favs">
+      <i class="fa-solid fa-bookmark"></i>
+      <i class="fa-regular fa-bookmark"></i>
+      My favs
+    </div>
+    <div class="following">
+      <i class="fa-solid fa-user-plus"></i>
+      Following
+    </div>
+  </div>
+</div>
+
 </html>
