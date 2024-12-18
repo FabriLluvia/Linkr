@@ -61,7 +61,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    border-width:  0;
+    border-width: 0;
 }
 
 .home,
@@ -123,13 +123,7 @@ body {
 .share,
 .download {
     margin: -1%;
-    width: 100%;
-    cursor: pointer;
     color: #EAE8FF;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 .arrow-up,
